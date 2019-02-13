@@ -10,5 +10,5 @@ export enum Ecategoria {
 	SERVIÇOSNOLAR = "Serviços no lar",
 	CULINARIA = "Culinária",
 	SERVICOSGERAIS = "Serviços Gerais"
-	
+
 }
