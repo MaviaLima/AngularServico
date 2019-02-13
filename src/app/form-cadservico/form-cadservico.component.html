@@ -1,0 +1,37 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cadastro de Serviço</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+          <div class="col">
+              <mat-form-field class="full-width">
+                <mat-select placeholder="Categoria" formControlName="categoria">
+                  <mat-option *ngFor="let categoria of options" [value]="categoria">
+                    {{ categoria }}
+                  </mat-option>
+             
+                </mat-select>
+                <mat-error *ngIf="addressForm.controls['categoria'].hasError('required')">
+                  A categoria é de <strong>preenchimento obrigatório</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Descrição" formControlName="descricao">
+            <mat-error *ngIf="addressForm.controls['descricao'].hasError('required')">
+                A descrição do serviço é de <strong>preenchimento obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
